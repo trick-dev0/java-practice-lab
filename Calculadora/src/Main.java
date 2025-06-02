@@ -24,6 +24,20 @@ public class Main {
         do {
             opcao = sc.nextInt();
 
+            // Caso o cliente digite 5, ja encerra o programa
+            if (opcao == 5) {
+                System.out.println("Encerrando programa...");
+                break;
+            }
+
+            // Caso digite um valor fora das opções
+            if (opcao <= 0 ||  opcao >= 5) {
+                System.out.println("Essa opção não existe, digite uma opção válida!");
+                System.out.print(corpoDeOpcoes);
+                System.out.println("");
+                continue;
+            }
+
             System.out.println(" ");
             System.out.print("Valor 1: ");
             double valor1 = sc.nextDouble();
@@ -33,30 +47,26 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    Adicao operacaoSoma = new Adicao();
-                    System.out.println("Resultado: " + operacaoSoma.executar(valor1, valor2));
+                    Adicao add = new Adicao();
+                    System.out.println("Resultado: " + add.executar(valor1, valor2));
                     break;
                 case 2:
-                    Subtracao operacaoSubtracao = new Subtracao();
-                    System.out.println("Resultado: " + operacaoSubtracao.executar(valor1, valor2));
+                    Subtracao sub = new Subtracao();
+                    System.out.println("Resultado: " + sub.executar(valor1, valor2));
                     break;
                 case 3:
-                    Divisao operacaoDivisao = new Divisao();
-                    System.out.println("Resultado: " + operacaoDivisao.executar(valor1, valor2));
+                    Divisao div = new Divisao();
+                    System.out.println("Resultado: " + div.executar(valor1, valor2));
                     break;
                 case 4:
-                    Multiplicacao operacaoMultiplicacao = new Multiplicacao();
-                    System.out.println("Resultado: " + operacaoMultiplicacao.executar(valor1, valor2));
-                    break;
-                case 5:
-                    System.out.println("Encerrando programa...");
-                    break;
-                default:
-                    System.out.println("Essa opção não existe, digite uma opção válida!");
+                    Multiplicacao multi = new Multiplicacao();
+                    System.out.println("Resultado: " + multi.executar(valor1, valor2));
                     break;
             }
 
-        } while (opcao != 5);
+            System.out.println(" ");
+            System.out.print(corpoDeOpcoes);
+        } while (true);
         sc.close();
     }
 }
