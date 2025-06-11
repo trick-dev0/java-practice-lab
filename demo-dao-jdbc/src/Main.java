@@ -1,3 +1,5 @@
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -12,5 +14,7 @@ public class Main {
 
         Seller seller = new Seller(13, "Bob", "bobzinho997@gmail.com", LocalDate.of(2002, 8, 25), 3000.00, obj);
         System.out.println(seller);
+
+        SellerDao sellerDao = DaoFactory.createSallerDao();
     }
 }
