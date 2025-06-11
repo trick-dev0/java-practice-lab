@@ -1,0 +1,13 @@
+package model.dao;
+
+import model.entities.Seller;
+
+import java.util.List;
+
+public interface SellerDao {
+    void insert(Seller obj); // Inserir um vendedor
+    void update(Seller obj); // Att um vendedor
+    void deleteById(Seller id); // Deletar umm vendedor atarvés do ID
+    Seller findById(Seller id); //Retorna um object vendedor
+    List<Seller> findAll(); // Retorna uma lista com todos os vendedor cadastrados no banco
+}
