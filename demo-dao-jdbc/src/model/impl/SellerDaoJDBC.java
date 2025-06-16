@@ -122,7 +122,7 @@ public class SellerDaoJDBC implements SellerDao {
                 // Metodo para instanciar um departamento
                 Department dep = instantiateDepartment(rs);
 
-                //Metodo para inatanciar um vendedor com seu respectivo departamento
+                //Metodo para instanciar um vendedor com seu respectivo departamento
                 Seller sel = instantiateSeller(rs, dep);
                 return sel;
             }

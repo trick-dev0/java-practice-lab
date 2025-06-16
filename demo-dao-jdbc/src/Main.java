@@ -20,26 +20,26 @@ public class Main {
 
         System.out.println(seller);
 
-        System.out.println(" === Teste FinfByDepartment === ");
-        Department department = new Department(2, null);
-        List<Seller> list = sellerDao.findByDepartment(department);
-
-        for (Seller s : list) {
-            System.out.println(s);
-        }
-
-        System.out.println(" === Teste FinfAll === ");
-        List<Seller> list2 = sellerDao.findAll();
-
-        for (Seller s : list2) {
-            System.out.println(s);
-        }
-
-        System.out.println(" === Teste Insert === ");
-
-        Seller seller0 = new Seller(null, "Patrick", "Patrickvendedor@gmail.com", LocalDate.of(2002, 8, 25), 3000.00, department);
-        sellerDao.insert(seller0);
-        System.out.println("Inserted! New Id = " + seller0.getId());
+//        System.out.println(" === Teste FinfByDepartment === ");
+//        Department department = new Department(2, null);
+//        List<Seller> list = sellerDao.findByDepartment(department);
+//
+//        for (Seller s : list) {
+//            System.out.println(s);
+//        }
+//
+//        System.out.println(" === Teste FinfAll === ");
+//        List<Seller> list2 = sellerDao.findAll();
+//
+//        for (Seller s : list2) {
+//            System.out.println(s);
+//        }
+//
+//        System.out.println(" === Teste Insert === ");
+//
+//        Seller seller0 = new Seller(null, "Patrick", "Patrickvendedor@gmail.com", LocalDate.of(2002, 8, 25), 3000.00, department);
+//        sellerDao.insert(seller0);
+//        System.out.println("Inserted! New Id = " + seller0.getId());
 
 //        System.out.println(" === Teste UpDate === ");
 //        Department department2 = new Department(4, null);
@@ -53,9 +53,9 @@ public class Main {
 //        sellerDao.update(seller);
 //        System.out.println("Updated! New Id = " + seller.getId());
 
-        System.out.println(" === Test Delete === ");
-        System.out.print("Digite o Id que deja deletar: ");
-        int id = sc.nextInt();
-        sellerDao.deleteById(id);
+//        System.out.println(" === Test Delete === ");
+//        System.out.print("Digite o Id que deja deletar: ");
+//        int id = sc.nextInt();
+//        sellerDao.deleteById(id);
     }
 }

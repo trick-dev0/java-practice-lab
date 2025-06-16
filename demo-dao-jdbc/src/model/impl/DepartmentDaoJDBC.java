@@ -9,7 +9,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DepartmentDaoJDBC implements DepartmentDao {
     Connection conn;
@@ -92,11 +95,66 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public Department findById(Integer id) {
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        String comandSQL = "SELECT * FROM department WHERE Id = ?";
+
+        try{
+            st = conn.prepareStatement(comandSQL);
+            st.setInt(1, id);
+            rs = st.executeQuery();
+
+            if(rs.next()){
+                Department dep = instantiateDepartment(rs);
+                return dep;
+            }
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        }finally{
+            DB.closeResultSet(rs);
+            DB.closeStatment(st);
+        }
         return null;
     }
 
     @Override
     public List<Department> findAll() {
-        return List.of();
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        String comandSql = "SELECT * FROM department";
+
+        try{
+            st = conn.prepareStatement(comandSql);
+            rs = st.executeQuery();
+
+            //Armazena a lista final de Departmest
+            List<Department> deps = new ArrayList<>();
+            // Evita duplicatas
+            Map<Integer, Department> map = new HashMap<>();
+            while(rs.next()){
+                // Busca no Map o Departamento com o id desejado
+                Department dep = map.get(rs.getInt("Id"));
+
+                // Caso não tenha nenhum, vai instanciar um novo
+                if(dep == null){
+                    // Instanciando
+                    dep = instantiateDepartment(rs);
+                    // Adicioan ao Map
+                    // O "rs.getInt("Id")" pega o valor do Id na coluna e add  o dep instancializado
+                    map.put(rs.getInt("Id"), dep);
+                    deps.add(dep);
+                }
+            }
+            return deps;
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        }
+    }
+
+    public Department instantiateDepartment(ResultSet rs) throws SQLException {
+        Department obj = new Department();
+        obj.setId(rs.getInt("Id"));
+        obj.setName(rs.getString("Name"));
+        return obj;
     }
 }

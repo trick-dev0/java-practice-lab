@@ -3,6 +3,7 @@ import model.dao.DepartmentDao;
 import model.entities.Department;
 
 import java.sql.SQLOutput;
+import java.util.List;
 import java.util.Scanner;
 
 public class Program {
@@ -20,18 +21,29 @@ public class Program {
 //        System.out.println("Create Department!! \n"
 //                + "Generated ID " + newDepartment.getId());
 
-        // TEST OK
-        System.out.println(" -------- Test 2: Update -------- ");
-        // Criando um objeto Department para atualizar
-        Department depAtt = new Department();
-        depAtt.setId(5);
-        depAtt.setName("House cleaning");
+//        // TEST OK
+//        System.out.println(" -------- Test 2: Update -------- ");
+//        // Criando um objeto Department para atualizar
+//        Department depAtt = new Department();
+//        depAtt.setId(5);
+//        depAtt.setName("House cleaning");
+//
+//        departmentDao.update(depAtt);
+//
+//        System.out.println(" -------- Test 3: Delete -------- ");
+//        System.out.print("Which ID do you want to delete?: ");
+//        int id = sc.nextInt();
+//        departmentDao.deleteById(id);
 
-        departmentDao.update(depAtt);
+//        // TEST OK
+//        System.out.println(" -------- Test 4: findById -------- ");
+//        Department department = departmentDao.findById(2);
+//        System.out.println(department);
 
-        System.out.println(" -------- Test 3: Delete -------- ");
-        System.out.print("Which ID do you want to delete?: ");
-        int id = sc.nextInt();
-        departmentDao.deleteById(id);
+        List<Department> deps = departmentDao.findAll();
+
+        for (Department dep : deps) {
+            System.out.println(dep);
+        }
     }
 }
