@@ -62,12 +62,44 @@ public class SellerDaoJDBC implements SellerDao {
 
     @Override
     public void update(Seller obj) {
+        PreparedStatement st = null;
 
+        String comandSql = "UPDATE seller  \n" +
+                "SET Name = ?, Email = ?, BirthDate = ?, BaseSalary = ?, DepartmentId = ?  \n" +
+                "WHERE Id = ? ";
+
+        try {
+            st = conn.prepareStatement(comandSql);
+
+            st.setString(1, obj.getName());
+            st.setString(2, obj.getEmail());
+            // Tenho que  converter LocalDate para java.sql.Date
+            st.setDate(3, java.sql.Date.valueOf(obj.getBirthday()));
+            st.setDouble(4, obj.getBaseSalary());
+            st.setInt(5, obj.getDepartment().getId());
+            st.setInt(6, obj.getId());
+
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        }finally{
+            DB.closeStatment(st);
+        }
     }
 
     @Override
-    public void deleteById(Seller id) {
+    public void deleteById(Integer id) {
+        PreparedStatement st = null;
+        String comandSql = "DELETE FROM seller  \n" +
+                "WHERE Id = ? ";
+        try{
+            st = conn.prepareStatement(comandSql);
 
+            st.setInt(1, id);
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        }
     }
 
     @Override
