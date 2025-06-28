@@ -7,7 +7,7 @@
     <list default="true" id="ce43a2fc-ced9-4656-922b-58205a261be9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/dao/ContatoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/dao/ContatoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/imple/ContatoDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/imple/ContatoDaoJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo-dao-jdbc/src/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo-dao-jdbc/src/db/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo-dao-jdbc/src/model/dao/SellerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo-dao-jdbc/src/model/dao/SellerDao.java" afterDir="false" />
@@ -74,7 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1750942757235</updated>
       <workItem from="1750942762960" duration="7682000" />
-      <workItem from="1751060162698" duration="2834000" />
+      <workItem from="1751060162698" duration="3144000" />
+      <workItem from="1751130795201" duration="5045000" />
     </task>
     <servers />
   </component>
