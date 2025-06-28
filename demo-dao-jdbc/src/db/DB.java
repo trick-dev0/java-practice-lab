@@ -33,7 +33,7 @@ public class DB {
 
     private static Properties carregarPropriedades() throws IOException {
         Properties props = new Properties();
-        FileInputStream fis = new FileInputStream("C:\\Users\\aguia\\Dropbox\\Projetos GitHub\\Java\\demo-dao-jdbc\\db.properties"); // caminho do arquivo
+        FileInputStream fis = new FileInputStream("C:\\Users\\aguia\\Dropbox\\Projetos GitHub\\Java\\demo-dao-jdbc\\db.propertiesi"); // caminho do arquivo
         props.load(fis);
         return props;
     }
