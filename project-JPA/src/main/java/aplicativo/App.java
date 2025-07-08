@@ -1,12 +1,19 @@
 package aplicativo;
 
+import dominio.Cliente;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import util.JPAUtil;
 
 public class App {
     public static void main(String[] args){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("connectJpa");
-        EntityManager em = emf.createEntityManager();
+        EntityManager em = JPAUtil.getEntityManager();
+
+        Cliente clienteT1 = new Cliente();
+        clienteT1.setNome("Patrick");
+
+        em.getTransaction().begin();
+        em.persist(clienteT1);
+        em.getTransaction().commit();
+        System.out.println("Cliente criado com sucesso");
     }
 }

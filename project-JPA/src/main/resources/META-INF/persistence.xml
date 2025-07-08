@@ -9,9 +9,9 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Classes que foram relacioandas -->
-        <!-- <class>dominio.Pessoa</class>-->
-        <!-- Conexão com o banco de dados -->
+        <class>dominio.Cliente</class>
 
+        <!-- Conexão com o banco de dados -->
         <properties>
             <!-- JDBC -->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
