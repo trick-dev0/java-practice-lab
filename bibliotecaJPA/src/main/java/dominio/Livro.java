@@ -1,9 +1,16 @@
 package dominio;
 
+import jakarta.persistence.*;
+
 import java.util.List;
 import java.util.Objects;
 
+
+@Entity
+@Table(name = "livros")
 public class Livro {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private int anoPublicacao;
@@ -73,4 +80,5 @@ public class Livro {
     public String toString() {
         return titulo + ", " + anoPublicacao + ", Autor(a)" + autores + " - id: " + id;
     }
+
 }

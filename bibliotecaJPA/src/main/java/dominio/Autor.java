@@ -8,6 +8,7 @@ public class Autor {
     private Long id;
     private String nome;
     private List<Livro> livros = new ArrayList<>();
+
     public Autor() {
     }
 
