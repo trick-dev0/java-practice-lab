@@ -1,13 +1,21 @@
 package dominio;
 
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "autores")
 public class Autor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private List<Livro> livros = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "autores")
+    private List<Livro> livros;
 
     public Autor() {
     }

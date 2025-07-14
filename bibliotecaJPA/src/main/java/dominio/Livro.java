@@ -14,7 +14,14 @@ public class Livro {
     private Long id;
     private String titulo;
     private int anoPublicacao;
-    List<Autor> autores;
+
+    @ManyToMany
+    @JoinTable(
+            name = "livro_autor", // nome da tabela intermediária
+            joinColumns = @JoinColumn(name = "livro_id"), // FK para Livro
+            inverseJoinColumns = @JoinColumn(name = "autor_id") // FK para Autor
+    )
+    private List<Autor> autores;
 
     public Livro() {
     }
