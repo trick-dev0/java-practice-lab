@@ -9,9 +9,6 @@ public class LivroDao {
     public LivroDao(EntityManager em) {
         this.em = em;
     }
-
-    public void cadastrarLivro(Livro livro){
-        this.em.persist(livro);
-    }
+    
 
 }

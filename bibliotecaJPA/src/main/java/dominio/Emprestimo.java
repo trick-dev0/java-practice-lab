@@ -1,11 +1,23 @@
 package dominio;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
+@Table(name = "emprestimos")
 public class Emprestimo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "livro_id")
     private Livro livroEmprestado;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente clienteEmprestado;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
