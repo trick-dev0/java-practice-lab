@@ -13,24 +13,22 @@ public class Livro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
-    private int anoPublicacao;
 
-    @ManyToMany
-    @JoinTable(
-            name = "livro_autor", // nome da tabela intermediária
-            joinColumns = @JoinColumn(name = "livro_id"), // FK para Livro
-            inverseJoinColumns = @JoinColumn(name = "autor_id") // FK para Autor
-    )
-    private List<Autor> autores;
+    @Column(name = "ano_publicacao")
+    private Integer anoPublicacao;
+
+    @ManyToOne
+    @JoinColumn(name = "autor_id")
+    private Autor autor;
 
     public Livro() {
     }
 
-    public Livro(Long id, String titulo, int anoPublicacao, List<Autor> autores) {
+    public Livro(Long id, String titulo, int anoPublicacao, Autor autor) {
         this.id = id;
         this.titulo = titulo;
         this.anoPublicacao = anoPublicacao;
-        this.autores = autores;
+        this.autor = autor;
     }
 
     public Livro(Long id, String titulo, int anoPublicacao) {
@@ -63,12 +61,12 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
     }
 
-    public List<Autor> getAutores() {
-        return autores;
+    public Autor getAutor() {
+        return autor;
     }
 
-    public void setAutores(List<Autor> autores) {
-        this.autores = autores;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     @Override
@@ -85,7 +83,7 @@ public class Livro {
 
     @Override
     public String toString() {
-        return titulo + ", " + anoPublicacao + ", Autor(a)" + autores + " - id: " + id;
+        return titulo + ", " + anoPublicacao + ", Autor(a)" + autor + " - id: " + id;
     }
 
 }

@@ -14,7 +14,7 @@ public class Autor {
     private Long id;
     private String nome;
 
-    @ManyToMany(mappedBy = "autores")
+    @OneToMany(mappedBy = "autor")
     private List<Livro> livros;
 
     public Autor() {

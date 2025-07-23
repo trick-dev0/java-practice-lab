@@ -22,11 +22,10 @@ public class AutorDaoJpa implements AutorDao {
         try {
             em.getTransaction().begin();
             em.persist(autor);
+            em.getTransaction().commit();
         }catch (Exception e) {
             em.getTransaction().rollback();
             // Caso de algum error, nào será salvo no banco de dados
-        }finally {
-            em.close();
         }
     }
 
@@ -42,8 +41,6 @@ public class AutorDaoJpa implements AutorDao {
             em.getTransaction().commit();
         }catch (Exception e) {
             em.getTransaction().rollback();
-        }finally {
-            em.close();
         }
     }
 
@@ -56,8 +53,6 @@ public class AutorDaoJpa implements AutorDao {
             em.getTransaction().commit();
         }catch (Exception e) {
             em.getTransaction().rollback();
-        }finally {
-            em.close();
         }
     }
 
@@ -70,8 +65,6 @@ public class AutorDaoJpa implements AutorDao {
             em.getTransaction().commit();
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
-            em.close();
         }
         return autores;
     }
@@ -83,8 +76,6 @@ public class AutorDaoJpa implements AutorDao {
             aut = em.find(Autor.class, id);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }finally {
-            em.close();
         }
         return aut;
     }

@@ -1,9 +1,11 @@
 package aplicativo;
 
 import dao.interfaces.AutorDao;
+import dao.interfaces.LivroDao;
 import dominio.Autor;
 import dominio.Livro;
 import imp.AutorDaoJpa;
+import imp.LivrodaoJpa;
 import jakarta.persistence.EntityManager;
 import util.JPAUtil;
 
@@ -14,7 +16,7 @@ public class App {
         EntityManager em = JPAUtil.getEntityManager();
 
         //Criando AUTORES
-        Autor autor = new Autor(null, "Camila Ribeiro Nogueira");
+        Autor autor = new Autor(null, "Luciana Correia Brito");
         AutorDao autorDao = new AutorDaoJpa(em);
 
 
@@ -31,11 +33,24 @@ public class App {
 //        // ==== Teste Delet ====
 //        autorDao.deletarAutor(3);
 
-        // ==== Teste Listar autores ====
-        List<Autor> listAutor = autorDao.listarAutores();
-        for (Autor a1 : listAutor) {
-            System.out.println(a1.getNome());
-        }
+//        // ==== Teste Listar autores ====
+//        List<Autor> listAutor = autorDao.listarAutores();
+//        for (Autor a1 : listAutor) {
+//            System.out.println(a1.getNome());
+//        }
+// ===========================================================================
+        LivroDao livroDao = new LivrodaoJpa(em);
 
+        Autor autor2 = autorDao.buscarAutor(6); // "Camila Ribeiro Nogueira"
+        Livro livro1 = new Livro(null, "Coração de Pedra", 2020, autor2);
+
+        //livroDao.inserirLivro(livro1);
+
+        //Livro livroTeste = livroDao.buscarLivro(1);
+        //System.out.println(livroTeste);
+
+        livroDao.atualizarLivro(1, "Dois Mundos, Um Destino");
+
+        JPAUtil.closeFactory();
     }
 }
