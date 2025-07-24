@@ -6,10 +6,10 @@ import jakarta.persistence.EntityManager;
 
 import java.util.List;
 
-public class LivrodaoJpa implements LivroDao {
+public class LivroDaoJpa implements LivroDao {
     private EntityManager em;
 
-    public LivrodaoJpa(EntityManager em) {
+    public LivroDaoJpa(EntityManager em) {
         this.em = em;
     }
 

@@ -1,16 +1,21 @@
 package aplicativo;
 
 import dao.interfaces.AutorDao;
+import dao.interfaces.ClienteDao;
+import dao.interfaces.EmprestimoDao;
 import dao.interfaces.LivroDao;
 import dominio.Autor;
+import dominio.Cliente;
+import dominio.Emprestimo;
 import dominio.Livro;
 import imp.AutorDaoJpa;
-import imp.LivrodaoJpa;
+import imp.ClienteDaoJpa;
+import imp.EmprestimoDaoJpa;
+import imp.LivroDaoJpa;
 import jakarta.persistence.EntityManager;
 import util.JPAUtil;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 public class App {
     public static void main(String[] args) {
@@ -40,7 +45,7 @@ public class App {
 //            System.out.println(a1.getNome());
 //        }
 // ===========================================================================
-        LivroDao livroDao = new LivrodaoJpa(em);
+        LivroDao livroDao = new LivroDaoJpa(em);
 
         Autor autor2 = autorDao.buscarAutor(6); // "Camila Ribeiro Nogueira"
         Livro livro1 = new Livro(null, "Coração de Pedra", 2020, autor2);
@@ -52,11 +57,28 @@ public class App {
 
         //livroDao.atualizarLivro(1, "Dois Mundos, Um Destino");
 
-        List<Livro> livros = livroDao.listarLivro();
+//        List<Livro> livros = livroDao.listarLivro();
+//
+//        for (Livro l : livros){
+//            System.out.println(l.getTitulo());
+//        }
+        // =======================================================================
+        ClienteDao clienteDao = new ClienteDaoJpa(em);
+       // Cliente cliete1 = new Cliente(null, "Patrick Aguiar", "patrick@gmail.com");
+       // clienteDao.inserirCliente(cliete1);
 
-        for (Livro l : livros){
-            System.out.println(l.getTitulo());
-        }
+        Cliente clienteTeste = clienteDao.buscarCliente(1);
+        Livro livroTeste = livroDao.buscarLivro(2);
+
+//        LocalDate dataInicial = LocalDate.now();
+//        LocalDate datafianl = dataInicial.plusDays(10);
+        EmprestimoDao emprestimoDAO = new EmprestimoDaoJpa(em);
+
+        Emprestimo newEmprestimo = new Emprestimo(null, livroTeste, clienteTeste, LocalDate.now(), LocalDate.now().plusDays(10));
+        System.out.println(newEmprestimo.getDataEmprestimo());
+
+        emprestimoDAO.adicionarEmprestimo(newEmprestimo);
+
 
         JPAUtil.closeFactory();
     }

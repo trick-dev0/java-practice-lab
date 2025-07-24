@@ -16,10 +16,14 @@ public class Emprestimo {
     @JoinColumn(name = "livro_id")
     private Livro livroEmprestado;
 
-    @ManyToOne
+
+    @ManyToOne  // Por se tratar de uma tabela que não é tipo primitivo, temos que fazer os relacionamentos
     @JoinColumn(name = "cliente_id")
     private Cliente clienteEmprestado;
+
+    @Column(name = "data_emprestimo")
     private LocalDate dataEmprestimo;
+    @Column(name = "data_devolucao")
     private LocalDate dataDevolucao;
 
     public Emprestimo() {

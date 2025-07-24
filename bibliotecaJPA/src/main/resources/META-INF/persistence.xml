@@ -5,10 +5,10 @@
              version="3.2">
     <persistence-unit name="connectJPA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
         <class>dominio.Livro</class>
         <class>dominio.Autor</class>
         <class>dominio.Cliente</class>
+        <class>dominio.Emprestimo</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/projetoJpa?useSSL=false&amp;serverTimezone=UTC"/>
