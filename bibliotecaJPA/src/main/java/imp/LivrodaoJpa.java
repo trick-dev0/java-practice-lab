@@ -54,7 +54,15 @@ public class LivrodaoJpa implements LivroDao {
 
     @Override
     public List<Livro> listarLivro() {
-        return List.of();
+        List<Livro> listLivros;
+        try{
+            em.getTransaction().begin();
+            listLivros = em.createQuery("SELECT l FROM Livro l", Livro.class).getResultList();
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return listLivros;
     }
 
     @Override

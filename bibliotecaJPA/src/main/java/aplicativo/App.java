@@ -9,6 +9,7 @@ import imp.LivrodaoJpa;
 import jakarta.persistence.EntityManager;
 import util.JPAUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class App {
@@ -49,7 +50,13 @@ public class App {
         //Livro livroTeste = livroDao.buscarLivro(1);
         //System.out.println(livroTeste);
 
-        livroDao.atualizarLivro(1, "Dois Mundos, Um Destino");
+        //livroDao.atualizarLivro(1, "Dois Mundos, Um Destino");
+
+        List<Livro> livros = livroDao.listarLivro();
+
+        for (Livro l : livros){
+            System.out.println(l.getTitulo());
+        }
 
         JPAUtil.closeFactory();
     }
