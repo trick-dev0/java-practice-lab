@@ -16,6 +16,8 @@ import jakarta.persistence.EntityManager;
 import util.JPAUtil;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -64,21 +66,26 @@ public class App {
 //        }
         // =======================================================================
         ClienteDao clienteDao = new ClienteDaoJpa(em);
-       // Cliente cliete1 = new Cliente(null, "Patrick Aguiar", "patrick@gmail.com");
-       // clienteDao.inserirCliente(cliete1);
+        EmprestimoDao emprestimoDAO = new EmprestimoDaoJpa(em);
+//        Cliente cliete1 = new Cliente(null, "Marlon Lopes", "m.lopes@gmail.com");
+//        clienteDao.inserirCliente(cliete1);
 
-        Cliente clienteTeste = clienteDao.buscarCliente(1);
-        Livro livroTeste = livroDao.buscarLivro(2);
+//        Cliente clienteTeste = clienteDao.buscarCliente(1);
+//        Livro livroTeste = livroDao.buscarLivro(2);
 
 //        LocalDate dataInicial = LocalDate.now();
 //        LocalDate datafianl = dataInicial.plusDays(10);
-        EmprestimoDao emprestimoDAO = new EmprestimoDaoJpa(em);
 
-        Emprestimo newEmprestimo = new Emprestimo(null, livroTeste, clienteTeste, LocalDate.now(), LocalDate.now().plusDays(10));
-        System.out.println(newEmprestimo.getDataEmprestimo());
+//        Emprestimo newEmprestimo = new Emprestimo(null, livroTeste, clienteTeste, LocalDate.now(), LocalDate.now().plusDays(10));
+//        System.out.println(newEmprestimo.getDataEmprestimo());
+//
+//        emprestimoDAO.adicionarEmprestimo(newEmprestimo);
 
-        emprestimoDAO.adicionarEmprestimo(newEmprestimo);
+        List<Cliente> listaDeClientes = clienteDao.listarCliente();
 
+        for (Cliente cliente : listaDeClientes) {
+            System.out.println(cliente.getNome());
+        }
 
         JPAUtil.closeFactory();
     }

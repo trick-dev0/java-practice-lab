@@ -25,18 +25,46 @@ public class ClienteDaoJpa implements ClienteDao {
     }
 
     @Override
-    public void atualizarCliente(Cliente cliente) {
+    public void atualizarCliente(Integer id, String name) {
+        try{
+            em.getTransaction().begin();
+            // Busco um cliente pelo id e o salvo numa variavel do tipo CLIENTE
+            Cliente cliente = em.find(Cliente.class, id);
+            // seto um nome novo para esse cliente
+            cliente.setNome(name);
 
+            // atualizo o banco de dados com o nome do novo cliente
+            em.merge(cliente);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     @Override
-    public void excluirCliente(Cliente cliente) {
-
+    public void deletarCliente(Integer id) {
+        try{
+            em.getTransaction().begin();
+            Cliente cliente = em.find(Cliente.class, id);
+            em.remove(cliente);
+            em.getTransaction().commit();
+        }catch(Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
     }
+
 
     @Override
     public List<Cliente> listarCliente() {
-        return List.of();
+        List<Cliente> lista;
+        try{
+            em.getTransaction().begin();
+            lista = em.createQuery("SELECT c FROM Cliente c", Cliente.class).getResultList();
+            em.getTransaction().commit();
+        }catch(Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+        return  lista;
     }
 
     @Override
