@@ -81,10 +81,10 @@ public class App {
 //
 //        emprestimoDAO.adicionarEmprestimo(newEmprestimo);
 
-        List<Cliente> listaDeClientes = clienteDao.listarCliente();
 
-        for (Cliente cliente : listaDeClientes) {
-            System.out.println(cliente.getNome());
+        List<Emprestimo> emprestimos = emprestimoDAO.listarEmprestimo();
+        for (Emprestimo emprestimo : emprestimos) {
+            System.out.println(emprestimo);
         }
 
         JPAUtil.closeFactory();
