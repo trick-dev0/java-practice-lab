@@ -1,0 +1,7 @@
+CREATE TABLE usuario(
+    id BIGINT NOT NULL PRIMARY KEY,
+    nome VARCHAR(64) NOT NULL,
+    idade INTEGER NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    senha VARCHAR(30) NOT NULL
+)
