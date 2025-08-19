@@ -1,7 +1,15 @@
 package com.example.Testando.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "usuario")
 public class Usuario {
-    private Long id;
+    @Id
+    private String id;
     private String nome;
     private Integer idade;
     private String email;
@@ -10,7 +18,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Long id, String nome, Integer idade, String email, String senha) {
+    public Usuario(String id, String nome, Integer idade, String email, String senha) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -18,11 +26,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -60,12 +68,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", idade=" + idade +
-                ", email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
-                '}';
+        return "Usuario - " + nome + " , " +  idade + " , id (" + id +")";
     }
 }
