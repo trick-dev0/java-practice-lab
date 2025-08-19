@@ -22,7 +22,6 @@ public class Main {
 //        contatoTeste.insert(pessoa1);
 //        contatoTeste.insert(pessoa2);
 
-
 //        System.out.println("  ======  Teste 2: FINDBY_ID  =====  ");
 //        contatoTeste.findById(18);
 //        System.out.println(contatoTeste.findById(18));
@@ -37,11 +36,9 @@ public class Main {
 
         System.out.println("  ======  Teste 5: FIND_ALL  =====  ");
 
-        for(Contato c: contatoTeste.findAll()){
+        for(Contato c: contatoTeste.findAll()) {
             System.out.println(c.toString());
         }
-
-
 
         // ENCERRAR
         DB.closeConnection();

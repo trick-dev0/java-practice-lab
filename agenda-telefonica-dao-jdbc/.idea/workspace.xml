@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce43a2fc-ced9-4656-922b-58205a261be9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/imple/ContatoDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/imple/ContatoDaoJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo-dao-jdbc/src/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo-dao-jdbc/src/db/DB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo-dao-jdbc/src/model/dao/SellerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo-dao-jdbc/src/model/dao/SellerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bibliotecaJPA/src/main/java/aplicativo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bibliotecaJPA/src/main/java/aplicativo/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project-JPA/src/main/java/aplicativo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-JPA/src/main/java/aplicativo/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,27 +40,29 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/java-libs/jdbc-connectors/mysql-connector-j-9.3.0.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Patrick/Dropbox/Projetos GitHub/Java/agenda-telefonica-dao-jdbc&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.31264368&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.26775.15" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.26775.15" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
       </set>
     </attachedChunks>
   </component>
@@ -75,11 +76,23 @@
       <updated>1750942757235</updated>
       <workItem from="1750942762960" duration="7682000" />
       <workItem from="1751060162698" duration="3144000" />
-      <workItem from="1751130795201" duration="5045000" />
+      <workItem from="1751130795201" duration="6658000" />
+      <workItem from="1751310256379" duration="208000" />
+      <workItem from="1751310474484" duration="404000" />
+      <workItem from="1751310896505" duration="352000" />
+      <workItem from="1751311264175" duration="39000" />
+      <workItem from="1751398669476" duration="42000" />
+      <workItem from="1753139467055" duration="603000" />
+      <workItem from="1755561070807" duration="1000" />
+      <workItem from="1755561083866" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
