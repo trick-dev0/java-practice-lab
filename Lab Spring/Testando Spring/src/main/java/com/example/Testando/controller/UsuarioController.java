@@ -42,4 +42,19 @@ public class UsuarioController {
         // Verifica se o usuário é nulo ou não
         return usuario.isPresent() ? usuario.get() : null;
     }
+
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable("id") String id){
+        usuarioRepository.deleteById(id);
+    }
+
+    @PutMapping("/{id}")
+    public void atualizar(@PathVariable("id") String id, @RequestBody Usuario usuario) {
+        /* Tem dois parâmetros no metodo,
+        * - O primeiro para extrair o valor do id da requisição
+        * - O segundo insere no body da requisição os dados atualizados*/
+
+        usuario.setId(id); // Vou adicionar o id ao Usuário com dados atualizados
+        usuarioRepository.save(usuario); // Utiliza-se o .save() para salvar o novo usuário
+    }
 }
